@@ -165,8 +165,11 @@ $ mv boost_1_72_0 ~/boost_1_72_0
 $ find . -type f -not -name '*.hpp' -not -name '*.h' -not -name "*.cpp" | wc -l
 44219
 6. Найдите полный пусть до файла `any.hpp` внутри библиотеки *boost*.
+
 ~$ find `pwd` | grep 'boost/any.hpp'
+
 /home/mint/boost_1_72_0/boost/any.hpp
+
 7. Выведите в консоль все файлы, где упоминается последовательность `boost::asio`.
 ~$ grep -rwl . -e "boost::asio"
 ./boost_1_72_0/boost/process/spawn.hpp
@@ -176,28 +179,46 @@ $ find . -type f -not -name '*.hpp' -not -name '*.h' -not -name "*.cpp" | wc -l
 ./boost_1_72_0/doc/html/boost_asio/overview/networking/protocols.html
 
 8. Скомпилирутйе *boost*. Можно воспользоваться [инструкцией](https://www.boost.org/doc/libs/1_61_0/more/getting_started/unix-variants.html#or-build-custom-binaries) или [ссылкой](https://codeyarns.com/2017/01/24/how-to-build-boost-on-linux/).
+
 ./bootstrap.sh
+
 ./b2
+
 The Boost C++ Libraries were successfully built!
+
 9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию `~/boost-libs`.
 mv stage/lib ~/boost-libs
 10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
 find . -type f -exec du -h {} '+'
+
 8,0K	./libboost_stacktrace_basic.a
+
 ...
+
 36K	./libboost_context.dylib
 11. Найдите *топ10* самых "тяжёлых".
 find . -type f -exec du -h {} '+' | sort -rn | head
+
 1134K	./libboost_log.dylib
+
 868K	./libboost_program_options.a
+
 754K	./libboost_regex.dylib
+
 730K	./libboost_graph.a
+
 708K	./libboost_unit_test_framework.dylib
+
 671K	./libboost_serialization.a
+
 592K	./libboost_locale.dylib
+
 485K	./libboost_graph.dylib
+
 450K	./libboost_python27.a
+
 448K	./libboost_program_options.dylib
+
 
 ```
 Copyright (c) 2015-2020 The ISC Authors
