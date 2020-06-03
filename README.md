@@ -141,6 +141,7 @@ $ gist REPORT.md
 ## Homework
 
 1. Скачайте библиотеку *boost* с помощью утилиты **wget**. Адрес для скачивания `https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz`.
+~$  wget https://sourceforge.net/projects/boost/files/boost/1.72.0/boost_1_72_0.tar.gz
 --2020-06-03 15:00:36--  https://sourceforge.net/projects/boost/files/boost/1.72.0/boost_1_72_0.tar.gz
 boost_1_72_0.tar.gz 100%[===================>] 120.72M   182KB/s    in 3m 22s  
 2020-06-03 15:04:04 (612 KB/s) - ‘boost_1_72_0.tar.gz’ saved [126580835/126580835]
